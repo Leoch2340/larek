@@ -1,0 +1,57 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.header {
+  height: $headerHeight; // Устанавливаем высоту шапки
+  background-color: $primary; // Устанавливаем цвет фона
+
+  // Вложенный элемент .header__container
+  &__container {
+    @include mixins.container(45px, 45px); // Применяем миксин контейнера с отступами 45px
+    @include mixins.flex(row); // Применяем flex с направлением row
+    align-items: center; 
+    justify-content: space-between; 
+  }
+
+  // Вложенный элемент .header__logo
+  &__logo {
+    height: $headerElementsSize; // Устанавливаем высоту логотипа
+
+    // Вложенный элемент .header__logo-image
+    &-image {
+      display: block; 
+      height: 100%; 
+    }
+  }
+
+  // Вложенный элемент .header__basket
+  &__basket {
+    @include mixins.link($primary, $hover); // Применяем стили ссылки с цветами $primary и $hover
+    background-image: url(../images/shopping_cart.svg); // Устанавливаем изображение корзины
+    height: 58px; 
+    width: 58px; 
+    border: none; 
+    position: relative; 
+    cursor: pointer; // Делаем элемент кликабельным
+
+    // Вложенный элемент .header__basket-counter
+    &-counter {
+      position: absolute; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      top: 0; 
+      right: -0.2rem; 
+      width: 0.8rem; 
+      height: 0.8rem; 
+      font-size: 0.5rem; 
+      background-color: $category1; 
+      color: $background; 
+      border-radius: 100%; 
+      font-weight: 600; 
+    }
+  }
+}

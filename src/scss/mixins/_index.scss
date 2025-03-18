@@ -1,0 +1,6 @@
+//Этот SCSS-код использует @forward, чтобы импортировать и переиспользовать стили из других файлов 
+@forward "fix";
+@forward "background";
+@forward "container";
+@forward "interactive";
+@forward "icon";

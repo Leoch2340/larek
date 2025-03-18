@@ -1,0 +1,22 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.gallery {
+  @include mixins.container; // Применяем миксин для контейнера
+  @include mixins.grid(600px, 24px); // Применяем миксин для сетки с шириной 600px и отступами 24px
+
+  // Вложенный элемент .gallery__item
+  &__item {
+    border: none; // Убираем границу
+    border-radius: $defaultBorderRadius; // Округляем углы до стандартного значения
+    @include mixins.selectable($secondary, 2px, $primaryLight); // Применяем миксин для выделяемых элементов
+
+    // Псевдоэлемент ::after
+    &::after {
+      border-radius: 0.8rem; // Устанавливаем радиус скругления углов 0.8rem
+    }
+  }
+}

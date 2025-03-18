@@ -1,0 +1,26 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.order-success {
+  @include mixins.flex(column); // Размещаем элементы в колонку
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  gap: 1rem; 
+
+  // Псевдоэлемент ::before (декоративное изображение)
+  &::before {
+    content: " "; // Добавляем пустое содержимое
+    @include mixins.background('../images/Subtract.png'); // Применяем фоновое изображение
+    width: 256px; 
+    height: 256px; 
+  }
+
+  // Вложенный элемент .order-success__close (кнопка закрытия)
+  &__close {
+    margin-top: 2rem; 
+  }
+}

@@ -1,0 +1,107 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.card {
+  // Применяем миксин flex с направлением column
+  @include mixins.flex(column);
+  border: 0; 
+  border-radius: $defaultBorderRadius; // Устанавливаем стандартный радиус границы
+  background-color: $primary; // Устанавливаем фон $primary
+  color: white; 
+  padding: $defaultPadding; // Устанавливаем стандартные отступы
+
+  // Вариант .card_full
+  &_full {
+    flex-direction: row; 
+    background-color: transparent; 
+
+    .card__title {
+      flex-grow: 0; 
+    }
+  }
+
+  // Вариант .card_compact
+  &_compact {
+    flex-direction: row; 
+    background-color: transparent; 
+    align-items: center; 
+    border-radius: 0; 
+
+    // Стили для заголовка внутри .card_compact
+    .card__title {
+      flex-grow: 1; 
+    }
+  }
+
+  // Вложенный элемент .card__column
+  &__column {
+    @include mixins.flex(column); // Применяем миксин flex с направлением column
+    align-items: flex-start; 
+  }
+
+  // Вложенный элемент .card__row
+  &__row {
+    @include mixins.flex(row); // Применяем миксин flex с направлением row
+    align-items: center; 
+    gap: $defaultPadding; // Устанавливаем промежуток между элементами
+  }
+
+  // Вложенный элемент .card__image
+  &__image {
+    height: 390px; 
+    aspect-ratio: 1; 
+    margin: 3.75rem; 
+  }
+
+  // Вложенный элемент .card__title
+  &__title {
+    font-size: $titleFontSize; // Устанавливаем размер шрифта из переменной
+    font-weight: 500; 
+    margin: 0; 
+    flex-grow: 1; 
+  }
+
+  // Вложенный элемент .card__text
+  &__text {
+    text-align: left; 
+    flex-grow: 1; 
+  }
+
+  // Вложенный элемент .card__category
+  &__category {
+    padding: 0.5rem 1.25rem; 
+    border-radius: 2.5rem; 
+    margin-bottom: 12px; 
+    color: $primary; 
+
+    // Вариант .card__category_soft
+    &_soft {
+      background-color: $category1; // Устанавливаем фон $category1
+    }
+    // Вариант .card__category_hard
+    &_hard {
+      background-color: $category5; // Устанавливаем фон $category5
+    }
+    // Вариант .card__category_other
+    &_other {
+      background-color: $category2; // Устанавливаем фон $category2
+    }
+    // Вариант .card__category_additional
+    &_additional {
+      background-color: $category3; // Устанавливаем фон $category3
+    }
+    // Вариант .card__category_button
+    &_button {
+      background-color: $category4; // Устанавливаем фон $category4
+    }
+  }
+
+  // Вложенный элемент .card__action (пустой блок)
+  &__action {}
+
+  // Вложенный элемент .card__price (пустой блок)
+  &__price {}
+}

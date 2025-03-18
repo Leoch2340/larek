@@ -1,0 +1,37 @@
+// Основные цвета темы
+$primary: #060C14; // Основной цвет (тёмно-синий)
+$secondary: white; // Вторичный цвет (белый)
+$background: #0F2137; // Фон страницы (тёмно-синий)
+$primaryLight: #1E334F; // Осветлённый вариант основного цвета
+$hover: #5F8CC7; // Цвет при наведении
+$error: #F18B7E; // Цвет ошибки (красновато-оранжевый)
+
+// Шрифты
+$font: 'YS Text', Roboto, Helvetica, Arial, sans-serif; // Основной шрифт
+$titleFont: 'Garamond', sans-serif; // Шрифт для заголовков
+$fontMono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; // Моноширинный шрифт
+$baseFontSize: 20px; // Базовый размер шрифта
+$baseFontColor: white; // Базовый цвет текста
+
+// Цвета категорий
+$category1: #83FA9D; // Цвет категории 1 (зелёный)
+$category2: #FAD883; // Цвет категории 2 (жёлтый)
+$category3: #B783FA; // Цвет категории 3 (фиолетовый)
+$category4: #83DDFA; // Цвет категории 4 (голубой)
+$category5: #FAA083; // Цвет категории 5 (оранжевый)
+
+// Размеры шрифтов
+$mainFontSize: 1.5em; // Основной размер шрифта
+$titleFontSize: 2.5em; // Размер шрифта для заголовков
+$headerElementsSize: 4.5rem; // Размер элементов в шапке
+$headerHeight: 9rem; // Высота шапки
+
+// Разметка и отступы
+$maxPageWidth: 1320px; // Максимальная ширина страницы
+$defaultPadding: 2.4rem; // Стандартные отступы
+
+// Границы и стили
+$defaultBorderRadius: 3rem; // Скругление углов по умолчанию
+$defaultBorder: 2px solid $primaryLight; // Основная граница
+$hoverBorder: 2px solid white; // Граница при наведении
+$overlayBackground: rgba(0, 0, 0, 0.8); // Затемнённый фон для оверлеев

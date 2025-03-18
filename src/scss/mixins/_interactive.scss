@@ -1,0 +1,73 @@
+// Импорт файла variables и использование всех его переменных
+@use "variables" as *;
+
+// Импорт файла container и использование его содержимого под псевдонимом mixins
+@use "container" as mixins;
+
+// Миксин для кнопки с параметрами: основной цвет, цвет фона и цвет при наведении
+@mixin button($color: $primary, $main: white, $hover: $secondary) {
+  padding: 1rem 2rem; // Внутренние отступы
+  color: $color; // Цвет текста
+  font-weight: 500; // Жирность шрифта
+  background: $main; // Цвет фона
+  border-radius: 0.8rem; // Скругление углов
+  cursor: pointer; // Курсор в виде указателя
+  transition: background-color .3s ease; // Плавное изменение цвета фона
+
+  &:hover {
+    background: $hover; // Цвет фона при наведении
+  }
+
+  &:disabled {
+    cursor: default; // Обычный курсор для отключенной кнопки
+    opacity: 0.25; // Полупрозрачность
+
+    &:hover {
+      background: $main; // Фон не изменяется при наведении на отключенную кнопку
+    }
+  }
+}
+
+// Миксин для ссылок с параметрами: основной цвет и цвет при наведении
+@mixin link($main: white, $hover: $secondary) {
+  padding: 0; // Убираем отступы
+  color: $main; // Основной цвет текста
+  background: transparent; // Прозрачный фон
+  border: none; // Без границы
+  border-radius: 0; // Без скругления углов
+  cursor: pointer; // Курсор в виде указателя
+  transition: color .3s ease; // Плавное изменение цвета текста
+
+  &:hover {
+    color: $hover; // Изменение цвета текста при наведении
+  }
+
+  &:disabled {
+    cursor: default; // Обычный курсор для отключенной ссылки
+    opacity: 0.25; // Полупрозрачность
+
+    &:hover {
+      color: $main; // Цвет текста не изменяется при наведении на отключенную ссылку
+    }
+  }
+}
+
+// Миксин для элементов, которые можно выбирать, с параметрами: цвет выделения, размер и цвет при наведении
+@mixin selectable($selected, $size, $hover) {
+  cursor: pointer; // Курсор в виде указателя
+  position: relative; // Позиционирование относительно родителя
+  transition: background-color .3s ease; // Плавное изменение цвета фона
+
+  &:hover {
+    background-color: $hover; // Изменение цвета фона при наведении
+  }
+
+  &:disabled {
+    opacity: 0.25; // Полупрозрачность
+    cursor: default; // Обычный курсор для отключенного элемента
+  }
+
+  &:hover:disabled {
+    background-color: unset; // Сброс изменения фона при наведении на отключенный элемент
+  }
+}

@@ -1,0 +1,21 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Устанавливаем базовые стили для html и body с классом .page
+html, body.page {
+	height: 100%; 
+	font-family: $font; // Применяем шрифт из переменных
+	font-size: $baseFontSize; // Устанавливаем базовый размер шрифта
+	color: $baseFontColor; // Устанавливаем цвет текста
+	background: $background; // Устанавливаем цвет фона
+}
+
+// Определяем стили для оболочки страницы .page__wrapper
+.page__wrapper {
+	width: 100%; 
+
+	// Модификатор для блокировки прокрутки страницы
+	&_locked {
+		position: fixed; 
+	}
+}

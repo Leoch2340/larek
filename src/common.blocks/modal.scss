@@ -1,0 +1,82 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.modal {
+  @include mixins.sublayer; // Применяем миксин для позиционирования
+  height: max-content; 
+  position: absolute; 
+  display: none; 
+  justify-content: center; 
+  background-color: $overlayBackground; // Устанавливаем цвет фона оверлея
+  z-index: 100; 
+  padding-top: 5vh; 
+  padding-bottom: 5vh; 
+
+  // Активное состояние модального окна
+  &_active {
+    display: flex; 
+  }
+
+  // Вложенный элемент .modal__container
+  &__container {
+    @include mixins.container; // Применяем миксин контейнера
+    @include mixins.flex(column); // Размещаем элементы в колонку
+    gap: $defaultPadding; 
+    background-color: $background; 
+    min-height: 90vmin; 
+    border-radius: 3rem; 
+    box-sizing: border-box; 
+    position: relative; 
+  }
+
+  // Вложенный элемент .modal__content
+  &__content {
+    flex-grow: 1; // Позволяем содержимому заполнять доступное пространство
+  }
+
+  // Вложенный элемент .modal__title
+  &__title {
+    margin: 0; 
+    font-size: 1.5rem; 
+    font-weight: 400; 
+  }
+
+  // Вложенный элемент .modal__actions
+  &__actions {
+    @include mixins.flex(row); // Размещаем элементы в строку
+    align-items: center; 
+    gap: 2rem; 
+  }
+
+  // Вложенный элемент .modal__close
+  &__close {
+    position: absolute; // Абсолютное позиционирование
+    top: calc(#{$defaultPadding} / 2); // Отступ сверху
+    right: calc(#{$defaultPadding} / 2); // Отступ справа
+    @include mixins.icon(2rem, 'close'); // Применяем миксин иконки
+    @include mixins.link(white, $hover); // Применяем стили ссылки
+  }
+
+  // Вложенный элемент .modal__footer
+  &__footer {
+    @include mixins.flex(row); // Размещаем элементы в строку
+    align-items: center; // Выравниваем элементы по центру
+    gap: 2rem; 
+  }
+
+  // Вложенный элемент .modal__message
+  &__message {
+    white-space: nowrap; // Запрещаем перенос строк
+    max-width: 60%; // Ограничиваем максимальную ширину
+    text-overflow: ellipsis; // Добавляем многоточие при обрезке текста
+    overflow: hidden; 
+
+    // Ошибочное сообщение
+    &_error {
+      color: $error; // Устанавливаем цвет ошибки
+    }
+  }
+}

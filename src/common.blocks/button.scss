@@ -1,0 +1,30 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.button {
+  // Применяем миксин button с цветами: $primary (фон), white (текст), $hover (при наведении)
+  @include mixins.button($primary, white, $hover);
+  border: 0; 
+
+  // Вариант кнопки .button_alt
+  &_alt {
+    // Применяем миксин button с цветами: white (фон), $primaryLight (текст), $primaryLight (при наведении)
+    @include mixins.button(white, $primaryLight, $primaryLight);
+    border: $defaultBorder; // Устанавливаем стандартную границу
+
+    // Стили для состояния при наведении
+    &:hover {
+      border: $hoverBorder; // Изменяем границу при наведении
+    }
+  }
+
+  // Вариант кнопки .button_alt-active
+  &_alt-active {
+    // Применяем тот же миксин button с аналогичными параметрами
+    @include mixins.button(white, $primaryLight, $primaryLight);
+    border: $hoverBorder; // Устанавливаем границу, как при наведении
+  }
+}

@@ -1,0 +1,47 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *; 
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins"; 
+
+.basket {
+  // Применяем миксин flex с направлением column
+  @include mixins.flex(column); 
+  gap: 2rem; 
+  height: 100%; 
+
+  // Вложенный элемент .basket__list
+  &__list {
+    padding: 0; 
+    margin: 0; 
+    flex-grow: 1; 
+  }
+
+  // Вложенный элемент .basket__item
+  &__item {
+    border-bottom: 1px solid $primary; // Добавляем нижнюю границу с цветом $primary
+    padding: 1.5rem 0; 
+
+    // Вложенный элемент .basket__item-index
+    &-index {
+      @include mixins.flex(row); // Применяем миксин flex с направлением row
+      justify-content: center; 
+      align-items: center; 
+      font-size: 1.5rem; 
+      width: 55px; 
+      height: 55px; 
+      border-radius: 50%; 
+      background-color: $primary; // Задаем фоновый цвет $primary
+      color: white; 
+      margin-right: 1rem; 
+    }
+
+    // Вложенный элемент .basket__item-delete
+    &-delete {
+      @include mixins.icon(2rem, 'trash'); // Применяем миксин icon с размером 2rem и иконкой 'trash'
+      @include mixins.link($hover, white); // Применяем миксин link с эффектом наведения $hover и белым цветом
+      opacity: 0.5; 
+      margin-left: 4rem; 
+    }
+  }
+}

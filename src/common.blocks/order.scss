@@ -1,0 +1,24 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+// Определяем стили для блока оформления заказа .order
+.order {
+  @include mixins.flex(column); // Размещаем элементы в колонку
+  gap: 4rem; 
+  margin-bottom: 4rem; 
+
+  // Вложенный элемент .order__field (группы полей ввода)
+  &__field {
+    @include mixins.flex(column); // Размещаем элементы в колонку
+    gap: 1.5rem; 
+  }
+
+  // Вложенный элемент .order__buttons (кнопки оформления заказа)
+  &__buttons {
+    @include mixins.flex(row); // Размещаем элементы в строку
+    gap: 1.5rem; 
+  }
+}

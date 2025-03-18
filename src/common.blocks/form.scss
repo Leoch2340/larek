@@ -1,0 +1,46 @@
+// Подключаем файл variables и используем все его переменные
+@use "variables" as *;
+
+// Подключаем файл mixins, который содержит готовые миксины
+@use "mixins";
+
+.form {
+  // Применяем миксин flex с направлением column
+  @include mixins.flex(column);
+  gap: 1.5rem; 
+  border-radius: 3rem; 
+
+  // Вложенный элемент .form__label
+  &__label {
+    flex-grow: 1; // Позволяем элементу расти, занимая доступное пространство
+  }
+
+  // Вложенный элемент .form__input
+  &__input {
+    background: transparent; 
+    color: white; 
+    border: $defaultBorder; // Используем стандартную границу
+    border-radius: 1.5rem; 
+    padding: 1rem; 
+    font-size: 1.4rem; 
+    width: 100%; 
+    box-sizing: border-box; 
+    outline-color: $secondary; // Устанавливаем цвет обводки при фокусе
+
+    // Стили при фокусе на поле ввода
+    &:focus {
+      outline-style: solid; // Делаем обводку сплошной
+    }
+
+    // Стили для невалидного состояния
+    &:invalid {
+      border-color: $error; // Меняем цвет границы на цвет ошибки
+      outline-color: $error; // Меняем цвет обводки на цвет ошибки
+    }
+
+    // Стили для плейсхолдера
+    &::placeholder {
+      color: lighten($primaryLight, 23%); // Осветляем цвет плейсхолдера
+    }
+  }
+}

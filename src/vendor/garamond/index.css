@@ -1,0 +1,8 @@
+/* Подключаем пользовательский шрифт Garamond */
+@font-face {
+    font-family: "Garamond"; /* Устанавливаем имя шрифта */
+    src: url("./EBGaramond-Regular.woff2") format("woff2"), /* Загружаем шрифт в формате WOFF2 */
+         url("./EBGaramond-Regular.ttf") format("truetype"); /* Альтернативный вариант в формате TTF */
+    font-weight: 600; /* Задаем толщину шрифта (проверь, соответствует ли она файлу) */
+    font-style: normal; /* Обычный стиль шрифта (не курсив) */
+}

@@ -1,0 +1,27 @@
+// Импорт Normalize.css для сброса стандартных стилей браузера
+@use "../vendor/normalize";
+
+// Импорт пользовательских шрифтов
+@use "../vendor/ys-text"; // Основной шрифт YS Text
+@use "../vendor/garamond"; // Шрифт Garamond для заголовков
+@use "../vendor/glyphter"; // Иконки из Glyphter
+
+// Импорт файлов общих блоков
+@use "../common.blocks/button"; // Стили для кнопок
+@use "../common.blocks/form"; // Стили для форм
+@use "../common.blocks/modal"; // Стили для модальных окон
+
+// Импорт основных блоков страницы
+@use "../common.blocks/page"; // Основные стили страницы
+@use "../common.blocks/header"; // Стили для шапки сайта
+
+// Импорт блоков интерфейса
+@use "../common.blocks/gallery"; // Галерея изображений
+@use "../common.blocks/card"; // Карточки товаров или элементов
+@use "../common.blocks/basket"; // Корзина покупок
+@use "../common.blocks/order"; // Оформление заказа
+@use "../common.blocks/order-success"; // Страница успешного заказа
+
+// Импорт переменных и миксинов
+@use "variables" as *; // Импорт всех переменных
+@use "mixins"; // Импорт набора миксинов
