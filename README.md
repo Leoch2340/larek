@@ -1,15 +1,6 @@
 # Web Ларёк
 Фронтенд веб-приложения для онлайн-магазина, использующее HTML, SCSS, TypeScript и Webpack.
 
-![image](https://github.com/intredd/web-larek-frontend/assets/119800161/51887ff9-0394-4f27-baea-8b7d69316a1c)
-
-## Ссылка на макет в Figma
-
-- [Ссылка на макет в Figma](https://www.figma.com/design/50YEgxY8IYDYj7UQu7yChb/Веб-ларёк?node-id=0-1&t=mhsSFer0H4P8Kybi-0)
-
-## Структура проекта
-frontend - этот репозиторий ❤️
-
 ## Что сделано
 - Описана архитектура приложения (смотреть ниже)
 - сверстаны основные HTML-страницы и стили на SCSS;
