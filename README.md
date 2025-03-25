@@ -169,7 +169,7 @@ npm run build
   - `toggleButton` - переключает доступность кнопки.
   - set `items` - устанавливает товары в корзине.
   - set `total` - устанавливает общую стоимость товаров.
-### 4. Класс `DeliveryForm`
+### 4. Класс `DeliveryForm` (components\Order)
 Класс для отображения и управления формой доставки, включая метод оплаты и ввод адреса доставки. Наследуется от `Form<IDeliveryForm>`.
 
 `constructor(container: HTMLFormElement, events: IEvents, actions?: IActions)` - принимает контейнер формы доставки, объект для управления событиями и действия для обработки кликов в форме(опционально).
@@ -177,7 +177,7 @@ npm run build
 Методы:
   - `toggleButtons` - переключает активность кнопок оплаты.
   - set `address` - устанавливает адрес доставки.
-### 5. Класс `ContactForm`
+### 5. Класс `ContactForm` (components\Order)
 Класс для отображения и управления формой контактных данных, включая ввод телефона и электронной почты. Наследуется от `Form<IContactForm>`.
 
 `constructor(container: HTMLFormElement, events: IEvents)` - принимает контейнер формы доставки и объект для управления событиями.
