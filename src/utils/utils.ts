@@ -1,3 +1,9 @@
+/* 
+Этот набор функций содержит помощники для работы с DOM, обработку различных типов 
+данных и утилиты для преобразования данных в удобные форматы, такие как PascalCase в 
+kebab-case.
+*/
+
 // Функция преобразует строку из PascalCase в kebab-case
 export function pascalToKebab(value: string): string {
     return value.replace(/([a-z0–9])([A-Z])/g, "$1-$2").toLowerCase();

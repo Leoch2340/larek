@@ -1,3 +1,8 @@
+/* 
+Этот файл содержит глобальные настройки интернет-магазина, включая адреса API/CDN, 
+категории товаров и способы оплаты.
+*/
+
 // Базовый URL API сервера
 export const API_URL = `https://larek-api.nomoreparties.co/api/weblarek`;
 

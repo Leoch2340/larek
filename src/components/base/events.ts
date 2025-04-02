@@ -1,3 +1,8 @@
+/* 
+Этот код представляет собой класс EventEmitter, реализующий механизм подписки и 
+обработки событий.
+*/
+
 // Импортируем типы, используемые в EventEmitter
 import { EventName, Subscriber, EmitterEvent, IEvents } from "../../types";
 

@@ -1,3 +1,7 @@
+/* Этот код определяет класс Api, который упрощает взаимодействие с API с 
+помощью методов GET и POST 
+*/
+
 // Импортируем ApiPostMethods 
 import { ApiPostMethods } from "../../types";
 
